@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE0AB6251B48BD2B001642E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AB6241B48BD2B001642E0 /* AppDelegate.swift */; };
+		FE0AB6271B48BD2B001642E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AB6261B48BD2B001642E0 /* ViewController.swift */; };
+		FE0AB62A1B48BD2B001642E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0AB6281B48BD2B001642E0 /* Main.storyboard */; };
+		FE0AB62C1B48BD2B001642E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE0AB62B1B48BD2B001642E0 /* Images.xcassets */; };
+		FE0AB62F1B48BD2B001642E0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0AB62D1B48BD2B001642E0 /* LaunchScreen.xib */; };
+		FE0AB63B1B48BD2B001642E0 /* WSRefresh_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AB63A1B48BD2B001642E0 /* WSRefresh_swiftTests.swift */; };
+		FE0AB6451B48BF68001642E0 /* WSRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AB6441B48BF68001642E0 /* WSRefresh.swift */; };
+		FE581A8D1B48EF7900FD82DE /* WSRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE581A8C1B48EF7900FD82DE /* WSRefreshHeader.swift */; };
+		FE581A8F1B48EF8700FD82DE /* WSRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE581A8E1B48EF8700FD82DE /* WSRefreshFooter.swift */; };
+		FE581A911B4920CD00FD82DE /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE581A901B4920CD00FD82DE /* arrow@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE0AB6351B48BD2B001642E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE0AB6171B48BD2B001642E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE0AB61E1B48BD2B001642E0;
+			remoteInfo = "WSRefresh-swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FE0AB61F1B48BD2B001642E0 /* WSRefresh-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WSRefresh-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0AB6231B48BD2B001642E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE0AB6241B48BD2B001642E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE0AB6261B48BD2B001642E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE0AB6291B48BD2B001642E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE0AB62B1B48BD2B001642E0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FE0AB62E1B48BD2B001642E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FE0AB6341B48BD2B001642E0 /* WSRefresh-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WSRefresh-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0AB6391B48BD2B001642E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE0AB63A1B48BD2B001642E0 /* WSRefresh_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRefresh_swiftTests.swift; sourceTree = "<group>"; };
+		FE0AB6441B48BF68001642E0 /* WSRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSRefresh.swift; sourceTree = "<group>"; };
+		FE581A8C1B48EF7900FD82DE /* WSRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSRefreshHeader.swift; sourceTree = "<group>"; };
+		FE581A8E1B48EF8700FD82DE /* WSRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSRefreshFooter.swift; sourceTree = "<group>"; };
+		FE581A901B4920CD00FD82DE /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE0AB61C1B48BD2B001642E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0AB6311B48BD2B001642E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE0AB6161B48BD2B001642E0 = {
+			isa = PBXGroup;
+			children = (
+				FE0AB6211B48BD2B001642E0 /* WSRefresh-swift */,
+				FE0AB6371B48BD2B001642E0 /* WSRefresh-swiftTests */,
+				FE0AB6201B48BD2B001642E0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE0AB6201B48BD2B001642E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE0AB61F1B48BD2B001642E0 /* WSRefresh-swift.app */,
+				FE0AB6341B48BD2B001642E0 /* WSRefresh-swiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE0AB6211B48BD2B001642E0 /* WSRefresh-swift */ = {
+			isa = PBXGroup;
+			children = (
+				FE581A901B4920CD00FD82DE /* arrow@2x.png */,
+				FE0AB6241B48BD2B001642E0 /* AppDelegate.swift */,
+				FE0AB6261B48BD2B001642E0 /* ViewController.swift */,
+				FE0AB6441B48BF68001642E0 /* WSRefresh.swift */,
+				FE581A8C1B48EF7900FD82DE /* WSRefreshHeader.swift */,
+				FE581A8E1B48EF8700FD82DE /* WSRefreshFooter.swift */,
+				FE0AB6281B48BD2B001642E0 /* Main.storyboard */,
+				FE0AB62B1B48BD2B001642E0 /* Images.xcassets */,
+				FE0AB62D1B48BD2B001642E0 /* LaunchScreen.xib */,
+				FE0AB6221B48BD2B001642E0 /* Supporting Files */,
+			);
+			path = "WSRefresh-swift";
+			sourceTree = "<group>";
+		};
+		FE0AB6221B48BD2B001642E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE0AB6231B48BD2B001642E0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE0AB6371B48BD2B001642E0 /* WSRefresh-swiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE0AB63A1B48BD2B001642E0 /* WSRefresh_swiftTests.swift */,
+				FE0AB6381B48BD2B001642E0 /* Supporting Files */,
+			);
+			path = "WSRefresh-swiftTests";
+			sourceTree = "<group>";
+		};
+		FE0AB6381B48BD2B001642E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE0AB6391B48BD2B001642E0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE0AB61E1B48BD2B001642E0 /* WSRefresh-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE0AB63E1B48BD2B001642E0 /* Build configuration list for PBXNativeTarget "WSRefresh-swift" */;
+			buildPhases = (
+				FE0AB61B1B48BD2B001642E0 /* Sources */,
+				FE0AB61C1B48BD2B001642E0 /* Frameworks */,
+				FE0AB61D1B48BD2B001642E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WSRefresh-swift";
+			productName = "WSRefresh-swift";
+			productReference = FE0AB61F1B48BD2B001642E0 /* WSRefresh-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE0AB6331B48BD2B001642E0 /* WSRefresh-swiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE0AB6411B48BD2B001642E0 /* Build configuration list for PBXNativeTarget "WSRefresh-swiftTests" */;
+			buildPhases = (
+				FE0AB6301B48BD2B001642E0 /* Sources */,
+				FE0AB6311B48BD2B001642E0 /* Frameworks */,
+				FE0AB6321B48BD2B001642E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE0AB6361B48BD2B001642E0 /* PBXTargetDependency */,
+			);
+			name = "WSRefresh-swiftTests";
+			productName = "WSRefresh-swiftTests";
+			productReference = FE0AB6341B48BD2B001642E0 /* WSRefresh-swiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE0AB6171B48BD2B001642E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "wilson-yuan";
+				TargetAttributes = {
+					FE0AB61E1B48BD2B001642E0 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					FE0AB6331B48BD2B001642E0 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = FE0AB61E1B48BD2B001642E0;
+					};
+				};
+			};
+			buildConfigurationList = FE0AB61A1B48BD2B001642E0 /* Build configuration list for PBXProject "WSRefresh-swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE0AB6161B48BD2B001642E0;
+			productRefGroup = FE0AB6201B48BD2B001642E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE0AB61E1B48BD2B001642E0 /* WSRefresh-swift */,
+				FE0AB6331B48BD2B001642E0 /* WSRefresh-swiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE0AB61D1B48BD2B001642E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE581A911B4920CD00FD82DE /* arrow@2x.png in Resources */,
+				FE0AB62A1B48BD2B001642E0 /* Main.storyboard in Resources */,
+				FE0AB62F1B48BD2B001642E0 /* LaunchScreen.xib in Resources */,
+				FE0AB62C1B48BD2B001642E0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0AB6321B48BD2B001642E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE0AB61B1B48BD2B001642E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0AB6271B48BD2B001642E0 /* ViewController.swift in Sources */,
+				FE581A8F1B48EF8700FD82DE /* WSRefreshFooter.swift in Sources */,
+				FE0AB6451B48BF68001642E0 /* WSRefresh.swift in Sources */,
+				FE581A8D1B48EF7900FD82DE /* WSRefreshHeader.swift in Sources */,
+				FE0AB6251B48BD2B001642E0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0AB6301B48BD2B001642E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0AB63B1B48BD2B001642E0 /* WSRefresh_swiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE0AB6361B48BD2B001642E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE0AB61E1B48BD2B001642E0 /* WSRefresh-swift */;
+			targetProxy = FE0AB6351B48BD2B001642E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE0AB6281B48BD2B001642E0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE0AB6291B48BD2B001642E0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE0AB62D1B48BD2B001642E0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE0AB62E1B48BD2B001642E0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE0AB63C1B48BD2B001642E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE0AB63D1B48BD2B001642E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE0AB63F1B48BD2B001642E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "WSRefresh-swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FE0AB6401B48BD2B001642E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "WSRefresh-swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FE0AB6421B48BD2B001642E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WSRefresh-swiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WSRefresh-swift.app/WSRefresh-swift";
+			};
+			name = Debug;
+		};
+		FE0AB6431B48BD2B001642E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WSRefresh-swiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WSRefresh-swift.app/WSRefresh-swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE0AB61A1B48BD2B001642E0 /* Build configuration list for PBXProject "WSRefresh-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE0AB63C1B48BD2B001642E0 /* Debug */,
+				FE0AB63D1B48BD2B001642E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE0AB63E1B48BD2B001642E0 /* Build configuration list for PBXNativeTarget "WSRefresh-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE0AB63F1B48BD2B001642E0 /* Debug */,
+				FE0AB6401B48BD2B001642E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE0AB6411B48BD2B001642E0 /* Build configuration list for PBXNativeTarget "WSRefresh-swiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE0AB6421B48BD2B001642E0 /* Debug */,
+				FE0AB6431B48BD2B001642E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE0AB6171B48BD2B001642E0 /* Project object */;
+}
