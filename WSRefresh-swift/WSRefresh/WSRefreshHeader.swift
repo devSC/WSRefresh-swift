@@ -150,11 +150,11 @@ class WSRefrshHeader: WSRefreshComponent {
 }
 
 class WSRefreshStateHeader: WSRefrshHeader {
-//    var lastUpdatedTimeLabel: UILabel?
-//    var stateLabel: UILabel?
+    var lastUpdatedTimeLabel: UILabel?
+    var stateLabel: UILabel?
     
-    var lastUpdatedTimeLabel = UILabel()
-    var stateLabel = UILabel()
+//    var lastUpdatedTimeLabel! = UILabel()
+//    var stateLabel! = UILabel()
     
     
     var stateTitles = Dictionary<Int, String>()
@@ -182,7 +182,7 @@ class WSRefreshStateHeader: WSRefrshHeader {
             
         }
         
-        self.stateLabel.text = title
+        self.stateLabel?.text = title
     }
     
     override func prepare() {
@@ -198,48 +198,53 @@ class WSRefreshStateHeader: WSRefrshHeader {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        stateLabel.textAlignment = .Center
-        stateLabel.font = UIFont.boldSystemFontOfSize(14)
-        stateLabel.textColor = rgbColor(90, 90, 90)
-        stateLabel.autoresizingMask = .FlexibleWidth
+        if stateLabel == nil {
+            stateLabel = UILabel()
+            stateLabel!.textAlignment = .Center
+            stateLabel!.font = UIFont.boldSystemFontOfSize(14)
+            stateLabel!.textColor = rgbColor(90, 90, 90)
+            stateLabel!.autoresizingMask = .FlexibleWidth
+            stateLabel!.backgroundColor = UIColor.clearColor()
+            stateLabel?.text = stateTitles[1]
+
+            addSubview(stateLabel!)
+        }
         
-        lastUpdatedTimeLabel.textAlignment = .Center
-        lastUpdatedTimeLabel.font = UIFont.boldSystemFontOfSize(14)
-        lastUpdatedTimeLabel.textColor = rgbColor(90, 90, 90)
-        lastUpdatedTimeLabel.autoresizingMask = .FlexibleWidth
+        if lastUpdatedTimeLabel == nil {
+            lastUpdatedTimeLabel = UILabel()
+            
+            lastUpdatedTimeLabel!.textAlignment = .Center
+            lastUpdatedTimeLabel!.font = UIFont.boldSystemFontOfSize(14)
+            lastUpdatedTimeLabel!.textColor = rgbColor(90, 90, 90)
+            lastUpdatedTimeLabel!.autoresizingMask = .FlexibleWidth
+            lastUpdatedTimeLabel!.backgroundColor = UIColor.clearColor()
+            addSubview(lastUpdatedTimeLabel!)
+            
+            self.setState(.Default)
+        }
+
         
         
-        addSubview(stateLabel)
-        addSubview(lastUpdatedTimeLabel)
-//        if stateLabel == nil {
-//            stateLabel = UILabel()
-//            addSubview(stateLabel!)
-//        }
-//        
-//        if lastUpdatedTimeLabel == nil {
-//            lastUpdatedTimeLabel = UILabel()
-//            addSubview(lastUpdatedTimeLabel)
-//        }
         
-        if stateLabel.hidden == true {
+        if stateLabel!.hidden == true {
             return
         }
         
-        if lastUpdatedTimeLabel.hidden == true {
+        if lastUpdatedTimeLabel!.hidden == true {
             //状态
-            stateLabel.frame = bounds
+            stateLabel!.frame = bounds
         } else {
             //状态
-            stateLabel.ws_x = 0
-            stateLabel.ws_y = 0
-            stateLabel.ws_w = self.ws_w
-            stateLabel.ws_h = self.ws_h * 0.5
+            stateLabel!.ws_x = 0
+            stateLabel!.ws_y = 0
+            stateLabel!.ws_w = self.ws_w
+            stateLabel!.ws_h = self.ws_h * 0.5
             
             //更新时间
-            lastUpdatedTimeLabel.ws_x = 0
-            lastUpdatedTimeLabel.ws_y = stateLabel.ws_h
-            lastUpdatedTimeLabel.ws_w = self.ws_w
-            lastUpdatedTimeLabel.ws_h = self.ws_h - self.lastUpdatedTimeLabel.ws_y
+            lastUpdatedTimeLabel!.ws_x = 0
+            lastUpdatedTimeLabel!.ws_y = stateLabel!.ws_h
+            lastUpdatedTimeLabel!.ws_w = self.ws_w
+            lastUpdatedTimeLabel!.ws_h = self.ws_h - self.lastUpdatedTimeLabel!.ws_y
         }
         
     }
@@ -249,16 +254,16 @@ class WSRefreshStateHeader: WSRefrshHeader {
         
         switch state {
         case .Default:
-            stateLabel.text = stateTitles[1]
+            stateLabel?.text = stateTitles[1]
         case .Pulling:
-            stateLabel.text = stateTitles[2]
+            stateLabel?.text = stateTitles[2]
         case .Refreshing:
-            stateLabel.text = stateTitles[3]
+            stateLabel?.text = stateTitles[3]
         case .WillRefresh:
-            stateLabel.text = stateTitles[4]
+            stateLabel?.text = stateTitles[4]
 
         case .Ended:
-            stateLabel.text = stateTitles[5]
+            stateLabel?.text = stateTitles[5]
         }
         
 //        lastUpdatedTimeKey = self.lastUpdatedTimeKey
@@ -299,10 +304,10 @@ class WSRefreshStateHeader: WSRefrshHeader {
             var time = formatter.stringFromDate(lastUpdatedTime!)
             
             //显示日期
-            lastUpdatedTimeLabel.text = "最后更新: \(time)"
+            lastUpdatedTimeLabel?.text = "最后更新: \(time)"
             
         } else {
-            lastUpdatedTimeLabel.text = "最后更新: 无记录"
+            lastUpdatedTimeLabel?.text = "最后更新: 无记录"
         }
     }
 }
@@ -328,7 +333,7 @@ class WSRefreshNormalHeader: WSRefreshStateHeader {
         
         var imageSize = arrowView!.image?.size
         var arrwoCenterX = self.ws_w * 0.5
-        if stateLabel.hidden == false {
+        if stateLabel!.hidden == false {
             arrwoCenterX -= 100
         }
         
@@ -340,7 +345,7 @@ class WSRefreshNormalHeader: WSRefreshStateHeader {
         loadingView!.frame = arrowView!.frame
         
         
-        self.setState(.Default)
+//        self.setState(.Default)
 
     }
     
@@ -352,40 +357,40 @@ class WSRefreshNormalHeader: WSRefreshStateHeader {
         switch state {
         case .Default:
             if self.state == .Refreshing {
-                arrowView!.transform = CGAffineTransformIdentity
+                arrowView?.transform = CGAffineTransformIdentity
                 UIView.animateWithDuration(WSRefresh_Slow_Animation_Duration, animations: { () -> Void in
-                    self.loadingView!.alpha = 0.0
+                    self.loadingView?.alpha = 0.0
                 }, completion: { (completion) -> Void in
                     if self.state != .Default {
                         return
                     }
                     
-                    self.loadingView!.alpha = 1.0
-                    self.loadingView!.stopAnimating()
-                    self.arrowView!.hidden = false
+                    self.loadingView?.alpha = 1.0
+                    self.loadingView?.stopAnimating()
+                    self.arrowView?.hidden = false
                 })
             } else {
-                loadingView!.stopAnimating()
-                arrowView!.hidden = false
+                loadingView?.stopAnimating()
+                arrowView?.hidden = false
                 
                 UIView.animateWithDuration(WSRefresh_Fast_Animation_Duration, animations: { () -> Void in
-                    self.arrowView!.transform = CGAffineTransformIdentity
+                    self.arrowView?.transform = CGAffineTransformIdentity
                 }, completion: { (completion) -> Void in
                     
                 })
             }
         case .Pulling:
-            loadingView!.stopAnimating()
-            arrowView!.hidden = false
+            loadingView?.stopAnimating()
+            arrowView?.hidden = false
             
             UIView.animateWithDuration(WSRefresh_Fast_Animation_Duration, animations: { () -> Void in
-                self.arrowView!.transform = CGAffineTransformMakeRotation(CGFloat(0.00001 - M_PI))
+                self.arrowView?.transform = CGAffineTransformMakeRotation(CGFloat(0.00001 - M_PI))
             })
             
         case .Refreshing:
-            loadingView!.alpha = 1.0 //防止refreshing -> default的动画完毕动作没有被执行
-            loadingView!.startAnimating()
-            arrowView!.hidden = true
+            loadingView?.alpha = 1.0 //防止refreshing -> default的动画完毕动作没有被执行
+            loadingView?.startAnimating()
+            arrowView?.hidden = true
             
         case .Ended, .WillRefresh:
             println("AnimationEnding")

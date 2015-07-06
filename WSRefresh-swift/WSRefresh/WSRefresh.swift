@@ -112,6 +112,7 @@ class WSRefreshComponent: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.prepare()
+//        self.setState(.Default)
     }
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
