@@ -14,7 +14,13 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.tableView.addWSRefreshViewHeader { () -> (Void) in
+            println("Start Refreshing")
+//            let delayInSeconds = 1.0
+//            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * NSEC_PER_SEC)) // 1
             
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
+                self.tableView.endHeaderRefreshing()
+            })
         }
     }
 

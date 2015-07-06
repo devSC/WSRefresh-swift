@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52FC0B931B4A0B0D00CF38FD /* WSRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC0B901B4A0B0D00CF38FD /* WSRefresh.swift */; };
+		52FC0B941B4A0B0D00CF38FD /* WSRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC0B911B4A0B0D00CF38FD /* WSRefreshFooter.swift */; };
+		52FC0B951B4A0B0D00CF38FD /* WSRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC0B921B4A0B0D00CF38FD /* WSRefreshHeader.swift */; };
+		52FC0B971B4A149B00CF38FD /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC0B961B4A149B00CF38FD /* UIViewExtension.swift */; };
 		FE0AB6251B48BD2B001642E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AB6241B48BD2B001642E0 /* AppDelegate.swift */; };
 		FE0AB6271B48BD2B001642E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AB6261B48BD2B001642E0 /* ViewController.swift */; };
 		FE0AB62A1B48BD2B001642E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0AB6281B48BD2B001642E0 /* Main.storyboard */; };
 		FE0AB62C1B48BD2B001642E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE0AB62B1B48BD2B001642E0 /* Images.xcassets */; };
 		FE0AB62F1B48BD2B001642E0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0AB62D1B48BD2B001642E0 /* LaunchScreen.xib */; };
 		FE0AB63B1B48BD2B001642E0 /* WSRefresh_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AB63A1B48BD2B001642E0 /* WSRefresh_swiftTests.swift */; };
-		FE0AB6451B48BF68001642E0 /* WSRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AB6441B48BF68001642E0 /* WSRefresh.swift */; };
-		FE581A8D1B48EF7900FD82DE /* WSRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE581A8C1B48EF7900FD82DE /* WSRefreshHeader.swift */; };
-		FE581A8F1B48EF8700FD82DE /* WSRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE581A8E1B48EF8700FD82DE /* WSRefreshFooter.swift */; };
 		FE581A911B4920CD00FD82DE /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE581A901B4920CD00FD82DE /* arrow@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52FC0B901B4A0B0D00CF38FD /* WSRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSRefresh.swift; sourceTree = "<group>"; };
+		52FC0B911B4A0B0D00CF38FD /* WSRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSRefreshFooter.swift; sourceTree = "<group>"; };
+		52FC0B921B4A0B0D00CF38FD /* WSRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSRefreshHeader.swift; sourceTree = "<group>"; };
+		52FC0B961B4A149B00CF38FD /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		FE0AB61F1B48BD2B001642E0 /* WSRefresh-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WSRefresh-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0AB6231B48BD2B001642E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE0AB6241B48BD2B001642E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,9 +45,6 @@
 		FE0AB6341B48BD2B001642E0 /* WSRefresh-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WSRefresh-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0AB6391B48BD2B001642E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE0AB63A1B48BD2B001642E0 /* WSRefresh_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRefresh_swiftTests.swift; sourceTree = "<group>"; };
-		FE0AB6441B48BF68001642E0 /* WSRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSRefresh.swift; sourceTree = "<group>"; };
-		FE581A8C1B48EF7900FD82DE /* WSRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSRefreshHeader.swift; sourceTree = "<group>"; };
-		FE581A8E1B48EF8700FD82DE /* WSRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSRefreshFooter.swift; sourceTree = "<group>"; };
 		FE581A901B4920CD00FD82DE /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52FC0B8F1B4A0B0D00CF38FD /* WSRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				52FC0B901B4A0B0D00CF38FD /* WSRefresh.swift */,
+				52FC0B911B4A0B0D00CF38FD /* WSRefreshFooter.swift */,
+				52FC0B921B4A0B0D00CF38FD /* WSRefreshHeader.swift */,
+				52FC0B961B4A149B00CF38FD /* UIViewExtension.swift */,
+			);
+			path = WSRefresh;
+			sourceTree = "<group>";
+		};
 		FE0AB6161B48BD2B001642E0 = {
 			isa = PBXGroup;
 			children = (
@@ -85,12 +98,10 @@
 		FE0AB6211B48BD2B001642E0 /* WSRefresh-swift */ = {
 			isa = PBXGroup;
 			children = (
+				52FC0B8F1B4A0B0D00CF38FD /* WSRefresh */,
 				FE581A901B4920CD00FD82DE /* arrow@2x.png */,
 				FE0AB6241B48BD2B001642E0 /* AppDelegate.swift */,
 				FE0AB6261B48BD2B001642E0 /* ViewController.swift */,
-				FE0AB6441B48BF68001642E0 /* WSRefresh.swift */,
-				FE581A8C1B48EF7900FD82DE /* WSRefreshHeader.swift */,
-				FE581A8E1B48EF8700FD82DE /* WSRefreshFooter.swift */,
 				FE0AB6281B48BD2B001642E0 /* Main.storyboard */,
 				FE0AB62B1B48BD2B001642E0 /* Images.xcassets */,
 				FE0AB62D1B48BD2B001642E0 /* LaunchScreen.xib */,
@@ -225,10 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FC0B971B4A149B00CF38FD /* UIViewExtension.swift in Sources */,
+				52FC0B951B4A0B0D00CF38FD /* WSRefreshHeader.swift in Sources */,
+				52FC0B941B4A0B0D00CF38FD /* WSRefreshFooter.swift in Sources */,
+				52FC0B931B4A0B0D00CF38FD /* WSRefresh.swift in Sources */,
 				FE0AB6271B48BD2B001642E0 /* ViewController.swift in Sources */,
-				FE581A8F1B48EF8700FD82DE /* WSRefreshFooter.swift in Sources */,
-				FE0AB6451B48BF68001642E0 /* WSRefresh.swift in Sources */,
-				FE581A8D1B48EF7900FD82DE /* WSRefreshHeader.swift in Sources */,
 				FE0AB6251B48BD2B001642E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "WSRefresh-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -369,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "WSRefresh-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

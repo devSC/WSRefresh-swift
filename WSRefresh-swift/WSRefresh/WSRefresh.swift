@@ -16,10 +16,10 @@ let WS_SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
 
 extension UIScrollView: UIScrollViewDelegate {
 
-    var refreshHeader: WSRefrshHeader? {
+    var refreshHeader: WSRefreshNormalHeader? {
         get {
             var refreshHeader = viewWithTag(REFRESH_HEADER_TAG)
-            return refreshHeader as? WSRefrshHeader
+            return refreshHeader as? WSRefreshNormalHeader
         }
     }
     
@@ -34,7 +34,8 @@ extension UIScrollView: UIScrollViewDelegate {
     func addWSRefreshViewHeader(refreshAction: ()->()) {
         self.alwaysBounceVertical = true
         if self.refreshHeader == nil {
-            var headView = WSRefrshHeader(action: refreshAction,frame: CGRectZero);
+            var headView = WSRefreshNormalHeader(action: refreshAction,frame: CGRectZero);
+            headView.tag = REFRESH_HEADER_TAG
             addSubview(headView)
         }
     }
@@ -44,10 +45,16 @@ extension UIScrollView: UIScrollViewDelegate {
         self.alwaysBounceVertical = true
         if self.refreshFooter == nil {
             var footerView = WSRefreshFooter(action: refreshAction, frame: CGRectZero);
+            footerView.tag = REFRESH_FOOTER_TAG
             addSubview(footerView)
         }
 
     }
+    
+    func endHeaderRefreshing() {
+        self.refreshHeader!.setState(.Default)
+    }
+    
     
     
     
@@ -66,6 +73,7 @@ enum WSRefreshViewState: Int {
     case Default
     case Pulling
     case Refreshing
+    case WillRefresh
     case Ended
 }
 
@@ -112,14 +120,14 @@ class WSRefreshComponent: UIView {
     
     func prepare() {
         autoresizingMask = .FlexibleWidth
-        self.backgroundColor = UIColor.cyanColor()
+//        self.backgroundColor = UIColor.cyanColor()
     }
     
     /*!
     layout
     */
     override func layoutSubviews() {
-        
+        super.layoutSubviews()
     }
     
     func setState(state: WSRefreshViewState) {
@@ -219,6 +227,22 @@ class WSRefreshComponent: UIView {
     //MARK:
     
     func beginRefreshing() {
+        UIView.animateWithDuration(WSRefresh_Fast_Animation_Duration, animations: { () -> Void in
+            self.alpha = 1.0
+        })
+        
+        self.pullingPercent = 1.0
+        //只要正在刷新 就完全显示
+        
+        if ((self.window) != nil) {
+            self.setState( .Refreshing)
+        } else {
+            // 刷新(预防从另一个控制器回到这个控制器的情况，回来要重新刷新一下)
+            self.setState( .WillRefresh)
+            
+            self.setNeedsDisplay()
+        }
+        
     
     }
     
