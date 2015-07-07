@@ -58,23 +58,25 @@ class WSRefrshHeader: WSRefreshComponent {
     override func setState(state: WSRefreshViewState) {
         
         if state == .Default {
-            if self.state != .Refreshing { return }
-            //save time
-            NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: lastUpdatedTimeKey)
-            NSUserDefaults.standardUserDefaults().synchronize()
-            
-            //回复inset 和 offset
-            UIView.animateWithDuration(WSRefresh_Slow_Animation_Duration, animations: { () -> Void in
-                self.scrollView.contentInset.top -= self.viewHeight
+            if self.state == .Refreshing {
+                //save time
+                NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: lastUpdatedTimeKey)
+                NSUserDefaults.standardUserDefaults().synchronize()
                 
-                //adjust alpha
-                if self.autoChangeAlpha == true {
-                    self.alpha = 0.0
-                }
-                
-            }, completion: { (completion) -> Void in
-                self.excuteRefreshingClosure()
-            })
+                //回复inset 和 offset
+                UIView.animateWithDuration(WSRefresh_Slow_Animation_Duration, animations: { () -> Void in
+                    self.scrollView.contentInset.top -= self.viewHeight
+                    
+                    //adjust alpha
+                    if self.autoChangeAlpha == true {
+                        self.alpha = 0.0
+                    }
+                    
+                    }, completion: { (completion) -> Void in
+                        self.excuteRefreshingClosure()
+                })
+            }
+           
             
         } else if state == .Refreshing {
             UIView.animateWithDuration(WSRefresh_Fast_Animation_Duration, animations: { () -> Void in
@@ -120,27 +122,33 @@ class WSRefrshHeader: WSRefreshComponent {
         
         //默认的top y
         var originalOffsetY =  -scrollOriginalInset.top
-        
-        //向下滑动
+                 //向下滑动
         if offsetY >= originalOffsetY {
             return
         }
         
-        var normalOffsetY = originalOffsetY - viewHeight
-        
-        var pullingPercent = (originalOffsetY - offsetY) / viewHeight
+        var normalOffsetY = originalOffsetY - self.ws_h
+
+        var pullingPercent = (originalOffsetY - offsetY) / self.ws_h
         
         if scrollView.dragging == true {
+            
             self.pullingPercent = pullingPercent
             
             if state == .Default && offsetY < normalOffsetY {
                 //即将刷新
+                println("即将刷新")
                 self.setState(.Pulling)
                 
+//                println("Default willSet ======= Pulling")
             } else if state == .Pulling && offsetY >= normalOffsetY {
-                self.setState(.Default)   
+                self.setState(.Default)
+                println("转为普通状态")
+//                println("Pulling:  willSet ======= Default")
             }
         } else if state == .Pulling { //开始刷新
+            //开始刷新
+            println("开始刷新")
             self.beginRefreshing()
         } else if pullingPercent < 1 {
             self.pullingPercent = pullingPercent
@@ -274,7 +282,7 @@ class WSRefreshStateHeader: WSRefrshHeader {
     override func setLastUpdatedTime(timeKey: String) {
         super.setLastUpdatedTime(timeKey)
         
-        var lastUpdateTime = NSUserDefaults.standardUserDefaults().objectForKey(timeKey) as! NSDate
+        var lastUpdateTime = NSUserDefaults.standardUserDefaults().objectForKey(timeKey) as? NSDate
         /*
         // 如果有block
         if (self.lastUpdatedTimeText) {
