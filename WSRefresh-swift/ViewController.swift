@@ -72,7 +72,7 @@ func randomColor() ->UIColor {
 
 
 
-class CollectionVC: UICollectionViewController {
+class CollectionVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var dataArray = [String]()
 
@@ -112,5 +112,11 @@ class CollectionVC: UICollectionViewController {
     func configureCell(cell: UICollectionViewCell, forItemAtIndexPath: NSIndexPath) {
         cell.backgroundColor = randomColor()
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        var width = UIScreen.mainScreen().bounds.width / 3 - 1;
+        return CGSize(width: width, height: width)
+    }
+
 }
 
