@@ -52,7 +52,7 @@ extension UIScrollView: UIScrollViewDelegate {
     }
     
     func endHeaderRefreshing() {
-        self.refreshHeader!.setState(.Default)
+        self.refreshHeader?.endingRefreshing()
     }
     
     
@@ -248,7 +248,7 @@ class WSRefreshComponent: UIView {
     }
     
     func endingRefreshing() {
-    
+        self.setState(.Default)
     }
     
     //是否正在刷新

@@ -73,7 +73,7 @@ class WSRefrshHeader: WSRefreshComponent {
                     }
                     
                     }, completion: { (completion) -> Void in
-                        self.excuteRefreshingClosure()
+                    self.pullingPercent = 0.0
                 })
             }
            
@@ -96,12 +96,14 @@ class WSRefrshHeader: WSRefreshComponent {
     
     override func endingRefreshing() {
         if self.scrollView is UICollectionView {
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), { () -> Void in
-//                
-//            });
+            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))) // 1
+            dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
+              super.endingRefreshing()
+            });
+        } else {
+            super.endingRefreshing()
         }
         
-        super.endingRefreshing()
     }
     override func excuteRefreshingClosure() {
         super.excuteRefreshingClosure()
@@ -122,7 +124,7 @@ class WSRefrshHeader: WSRefreshComponent {
         
         //默认的top y
         var originalOffsetY =  -scrollOriginalInset.top
-                 //向下滑动
+
         if offsetY >= originalOffsetY {
             return
         }
@@ -135,20 +137,12 @@ class WSRefrshHeader: WSRefreshComponent {
             
             self.pullingPercent = pullingPercent
             
-            if state == .Default && offsetY < normalOffsetY {
-                //即将刷新
-                println("即将刷新")
+            if state == .Default && offsetY < normalOffsetY { //Will Refresh
                 self.setState(.Pulling)
-                
-//                println("Default willSet ======= Pulling")
-            } else if state == .Pulling && offsetY >= normalOffsetY {
+            } else if state == .Pulling && offsetY >= normalOffsetY { //Set To Default
                 self.setState(.Default)
-                println("转为普通状态")
-//                println("Pulling:  willSet ======= Default")
             }
-        } else if state == .Pulling { //开始刷新
-            //开始刷新
-            println("开始刷新")
+        } else if state == .Pulling { //Start refresh
             self.beginRefreshing()
         } else if pullingPercent < 1 {
             self.pullingPercent = pullingPercent
