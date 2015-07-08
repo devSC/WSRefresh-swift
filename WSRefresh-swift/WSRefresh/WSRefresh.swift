@@ -50,12 +50,9 @@ extension UIScrollView: UIScrollViewDelegate {
         }
 
     }
-    func beginHeaderRefreshing() {
-        self.refreshHeader?.beginRefreshing()
-    }
     
     func endHeaderRefreshing() {
-        self.refreshHeader?.setState(.Default)
+        self.refreshHeader?.endingRefreshing()
     }
     
     
@@ -231,7 +228,6 @@ class WSRefreshComponent: UIView {
     //MARK:
     
     func beginRefreshing() {
-        
         UIView.animateWithDuration(WSRefresh_Fast_Animation_Duration, animations: { () -> Void in
             self.alpha = 1.0
         })
@@ -252,7 +248,7 @@ class WSRefreshComponent: UIView {
     }
     
     func endingRefreshing() {
-    
+        self.setState(.Default)
     }
     
     //是否正在刷新

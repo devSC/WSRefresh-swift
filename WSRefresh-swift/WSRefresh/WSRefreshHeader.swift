@@ -59,23 +59,25 @@ class WSRefrshHeader: WSRefreshComponent {
     override func setState(state: WSRefreshViewState) {
         
         if state == .Default {
-            if self.state != .Refreshing { return }
-            //save time
-            NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: lastUpdatedTimeKey)
-            NSUserDefaults.standardUserDefaults().synchronize()
-            
-            //回复inset 和 offset
-            UIView.animateWithDuration(WSRefresh_Slow_Animation_Duration, animations: { () -> Void in
-                self.scrollView.contentInset.top -= self.viewHeight
+            if self.state == .Refreshing {
+                //save time
+                NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: lastUpdatedTimeKey)
+                NSUserDefaults.standardUserDefaults().synchronize()
                 
-                //adjust alpha
-                if self.autoChangeAlpha == true {
-                    self.alpha = 0.0
-                }
-                
-            }, completion: { (completion) -> Void in
-                self.excuteRefreshingClosure()
-            })
+                //回复inset 和 offset
+                UIView.animateWithDuration(WSRefresh_Slow_Animation_Duration, animations: { () -> Void in
+                    self.scrollView.contentInset.top -= self.viewHeight
+                    
+                    //adjust alpha
+                    if self.autoChangeAlpha == true {
+                        self.alpha = 0.0
+                    }
+                    
+                    }, completion: { (completion) -> Void in
+                    self.pullingPercent = 0.0
+                })
+            }
+           
             
         } else if state == .Refreshing {
             UIView.animateWithDuration(WSRefresh_Fast_Animation_Duration, animations: { () -> Void in
@@ -95,12 +97,14 @@ class WSRefrshHeader: WSRefreshComponent {
     
     override func endingRefreshing() {
         if self.scrollView is UICollectionView {
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), { () -> Void in
-//                
-//            });
+            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))) // 1
+            dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
+              super.endingRefreshing()
+            });
+        } else {
+            super.endingRefreshing()
         }
         
-        super.endingRefreshing()
     }
     override func excuteRefreshingClosure() {
         super.excuteRefreshingClosure()
@@ -121,27 +125,25 @@ class WSRefrshHeader: WSRefreshComponent {
         
         //默认的top y
         var originalOffsetY =  -scrollOriginalInset.top
-        
-        //向下滑动
+
         if offsetY >= originalOffsetY {
             return
         }
         
-        var normalOffsetY = originalOffsetY - viewHeight
-        
-        var pullingPercent = (originalOffsetY - offsetY) / viewHeight
+        var normalOffsetY = originalOffsetY - self.ws_h
+
+        var pullingPercent = (originalOffsetY - offsetY) / self.ws_h
         
         if scrollView.dragging == true {
+            
             self.pullingPercent = pullingPercent
             
-            if state == .Default && offsetY < normalOffsetY {
-                //即将刷新
+            if state == .Default && offsetY < normalOffsetY { //Will Refresh
                 self.setState(.Pulling)
-                
-            } else if state == .Pulling && offsetY >= normalOffsetY {
-                self.setState(.Default)   
+            } else if state == .Pulling && offsetY >= normalOffsetY { //Set To Default
+                self.setState(.Default)
             }
-        } else if state == .Pulling { //开始刷新
+        } else if state == .Pulling { //Start refresh
             self.beginRefreshing()
         } else if pullingPercent < 1 {
             self.pullingPercent = pullingPercent
