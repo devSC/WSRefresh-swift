@@ -17,6 +17,7 @@
 		FE0AB62C1B48BD2B001642E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE0AB62B1B48BD2B001642E0 /* Images.xcassets */; };
 		FE0AB62F1B48BD2B001642E0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0AB62D1B48BD2B001642E0 /* LaunchScreen.xib */; };
 		FE0AB63B1B48BD2B001642E0 /* WSRefresh_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AB63A1B48BD2B001642E0 /* WSRefresh_swiftTests.swift */; };
+		FE1A25DF1B4D6903002AA48A /* WSRefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1A25DE1B4D6903002AA48A /* WSRefreshConst.swift */; };
 		FE581A911B4920CD00FD82DE /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE581A901B4920CD00FD82DE /* arrow@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		FE0AB6341B48BD2B001642E0 /* WSRefresh-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WSRefresh-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0AB6391B48BD2B001642E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE0AB63A1B48BD2B001642E0 /* WSRefresh_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRefresh_swiftTests.swift; sourceTree = "<group>"; };
+		FE1A25DE1B4D6903002AA48A /* WSRefreshConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSRefreshConst.swift; sourceTree = "<group>"; };
 		FE581A901B4920CD00FD82DE /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 				52FC0B911B4A0B0D00CF38FD /* WSRefreshFooter.swift */,
 				52FC0B921B4A0B0D00CF38FD /* WSRefreshHeader.swift */,
 				52FC0B961B4A149B00CF38FD /* UIViewExtension.swift */,
+				FE1A25DE1B4D6903002AA48A /* WSRefreshConst.swift */,
 			);
 			path = WSRefresh;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				52FC0B941B4A0B0D00CF38FD /* WSRefreshFooter.swift in Sources */,
 				52FC0B931B4A0B0D00CF38FD /* WSRefresh.swift in Sources */,
 				FE0AB6271B48BD2B001642E0 /* ViewController.swift in Sources */,
+				FE1A25DF1B4D6903002AA48A /* WSRefreshConst.swift in Sources */,
 				FE0AB6251B48BD2B001642E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

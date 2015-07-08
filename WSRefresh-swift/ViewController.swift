@@ -15,20 +15,29 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.tableView.addWSRefreshViewHeader { () -> (Void) in
-            
-            self.addRandomDataToArray()
-            
-            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))) // 1
+        self.addRandomDataToArray()
+        self.addRandomDataToArray()
 
-            
-            dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
-                self.tableView.endHeaderRefreshing()
-                self.tableView.reloadData()
-            })
-        }
         
-
+        self.tableView.reloadData()
+        
+//        self.tableView.addWSRefreshViewHeader { () -> (Void) in
+//            
+//            self.addRandomDataToArray()
+//            
+//            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))) // 1
+//
+//            
+//            dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
+//                self.tableView.endHeaderRefreshing()
+//                self.tableView.reloadData()
+//            })
+//        }
+        
+        self.tableView.addWSRefreshViewFooter { () -> () in
+          
+            
+        };
     }
 
     func addRandomDataToArray() {
@@ -89,6 +98,9 @@ class CollectionVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
                 self.collectionView?.endHeaderRefreshing()
             })
         })
+        
+        
+
     }
     
     

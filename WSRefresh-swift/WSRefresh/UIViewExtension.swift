@@ -75,3 +75,115 @@ extension UIView {
         }
     }
 }
+
+extension UIScrollView {
+    //MARK: Inset
+    var ws_insetTop: CGFloat {
+        set {
+            var inset = contentInset
+            inset.top = newValue
+            contentInset = inset
+        }
+        
+        get {
+            return contentInset.top
+        }
+    }
+    
+    var ws_insetBottom: CGFloat {
+        set {
+            var inset = contentInset
+            inset.bottom = newValue
+            contentInset = inset
+        }
+        get {
+            return contentInset.bottom
+        }
+    }
+    
+    var ws_insetLeft: CGFloat {
+        set {
+            var inset = contentInset
+            inset.left = newValue
+            contentInset = inset
+        }
+        get {
+            return contentInset.left
+        }
+
+    }
+    
+    var ws_insetRight: CGFloat {
+        set {
+            var inset = contentInset
+            inset.right = newValue
+            contentInset = inset
+        }
+        get {
+            return contentInset.right
+        }
+    }
+    
+    //MARK: Offset
+    
+    var ws_offsetX: CGFloat {
+        set {
+            var offset = contentOffset
+            offset.x = newValue
+            contentOffset = offset
+        }
+        get {
+            return contentOffset.x
+        }
+    }
+    
+    var ws_offsetY: CGFloat {
+        set {
+            var offset = contentOffset
+            offset.y = newValue
+            contentOffset = offset
+        }
+        get {
+            return contentOffset.y
+        }
+    }
+    
+    //MARK: ContentSize
+    var ws_contentWidth: CGFloat {
+        set {
+            var size = contentSize
+            size.width = newValue
+            contentSize = size
+        }
+        
+        get {
+            return contentSize.width
+        }
+    }
+    
+    var ws_contentHeight: CGFloat {
+        set {
+            var size = contentSize
+            size.height = newValue
+            contentSize = size
+        }
+        
+        get {
+            return contentSize.height
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

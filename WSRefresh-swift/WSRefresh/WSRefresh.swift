@@ -23,10 +23,10 @@ extension UIScrollView: UIScrollViewDelegate {
         }
     }
     
-    var refreshFooter: WSRefreshFooter? {
+    var refreshFooter: WSRefreshAutoNormalFooter? {
         get {
             var refreshFooter = viewWithTag(REFRESH_FOOTER_TAG)
-            return refreshFooter as? WSRefreshFooter
+            return refreshFooter as? WSRefreshAutoNormalFooter
         }
     
     }
@@ -40,11 +40,11 @@ extension UIScrollView: UIScrollViewDelegate {
         }
     }
     
-    func andWSRefreshViewFooter(refreshAction: () ->()) {
+    func addWSRefreshViewFooter(refreshAction: () ->()) {
     
         self.alwaysBounceVertical = true
         if self.refreshFooter == nil {
-            var footerView = WSRefreshFooter(action: refreshAction, frame: CGRectZero);
+            var footerView = WSRefreshAutoNormalFooter(action: refreshAction, frame: CGRectZero);
             footerView.tag = REFRESH_FOOTER_TAG
             addSubview(footerView)
         }
@@ -144,10 +144,13 @@ class WSRefreshComponent: UIView {
         if newSuperview != nil && newSuperview is UIScrollView {
             
 //            self.removeObservers
-            var sFrame = self.frame
-            
-            sFrame.size.width = newSuperview!.frame.width
-            sFrame.origin.x = 0
+            self.ws_w = newSuperview!.ws_w
+            self.ws_x = 0;
+//            
+//            var sFrame = self.frame
+//            
+//            sFrame.size.width = newSuperview!.frame.width
+//            sFrame.origin.x = 0
             //get scrllerview
             scrollView = newSuperview as! UIScrollView
             
@@ -257,5 +260,16 @@ class WSRefreshComponent: UIView {
         self.refreshAction()
     }
     
-    
 }
+
+//extension UILabel {
+//    func label() ->UILabel {
+//        var label = UILabel()
+//        label.font = UIFont.boldSystemFontOfSize(14);
+//        stateLabel!.backgroundColor = UIColor.clearColor()
+//        label.textColor = rgbColor(90, 90, 90);
+//        label.autoresizingMask = .FlexibleWidth
+//        label.textAlignment = .Center;
+//        return label;
+//    }
+//}
