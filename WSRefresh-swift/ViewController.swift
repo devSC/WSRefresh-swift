@@ -22,6 +22,8 @@ class ViewController: UITableViewController {
                 self.tableView.endHeaderRefreshing()
             })
         }
+        
+        self.tableView.beginHeaderRefreshing()
     }
 
     override func didReceiveMemoryWarning() {

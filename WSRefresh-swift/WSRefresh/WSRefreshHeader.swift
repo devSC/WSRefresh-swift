@@ -21,7 +21,8 @@ let WSRefresh_Slow_Animation_Duration = 0.4
 let WSRefresh_Header_DefaultText = "下拉可以刷新"
 let WSRefresh_Header_PullingText = "松开立即刷新"
 let WSRefresh_Header_RefreshingText = "正在刷新数据.."
-//let WSRefresh_Header_EndText = ""
+
+
 func rgbColor(r: CGFloat, g: CGFloat, b: CGFloat) ->UIColor {
     return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1)
 }
@@ -274,7 +275,7 @@ class WSRefreshStateHeader: WSRefrshHeader {
     override func setLastUpdatedTime(timeKey: String) {
         super.setLastUpdatedTime(timeKey)
         
-        var lastUpdateTime = NSUserDefaults.standardUserDefaults().objectForKey(timeKey) as! NSDate
+        var lastUpdateTime = NSUserDefaults.standardUserDefaults().objectForKey(timeKey) as? NSDate
         /*
         // 如果有block
         if (self.lastUpdatedTimeText) {
