@@ -11,4 +11,25 @@ import UIKit
 
 class WSRefreshFooter: WSRefreshComponent {
     
+    override func prepare() {
+        super.prepare()
+        
+        self.ws_h = WSRefresh_Footer_Height
+    }
+    
+    
+    func noticeNoMoreData() {
+        self.setState(.NoMoreData)
+    }
+    
+    func resetNoMoreData() {
+        self.setState(.Default)
+    }
+    
+}
+
+
+class WSRefreshAutoFooter: WSRefreshFooter {
+
+//    var
 }

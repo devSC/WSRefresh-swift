@@ -9,10 +9,13 @@
 import Foundation
 import UIKit
 
-let WSREFRESH_HEADER_LAST_UPDATE_TIME_KEY = "WSREFRHER_HEADER_LAST_UPDATE_TIME_KEY"
-let WSREFRESH_HEADER_HEIGHT: CGFloat = 64.0
+let WSRefresh_Header_Last_Update_Time_Key = "WSREFRHER_HEADER_LAST_UPDATE_TIME_KEY"
+let WSRefresh_Header_Height: CGFloat = 64.0
+
 let WSRefresh_Fast_Animation_Duration = 0.25
 let WSRefresh_Slow_Animation_Duration = 0.4
+
+let WSRefresh_Footer_Height: CGFloat = 44.0
 //
 //NSString *const MJRefreshAutoFooterIdleText = @"点击或上拉加载更多";
 //NSString *const MJRefreshAutoFooterRefreshingText = @"正在加载更多的数据...";
@@ -32,7 +35,7 @@ func rgbColor(r: CGFloat, g: CGFloat, b: CGFloat) ->UIColor {
 class WSRefrshHeader: WSRefreshComponent {
     
     /** 这个key用来存储上一次下拉刷新成功的时间 */
-    var lastUpdatedTimeKey = WSREFRESH_HEADER_LAST_UPDATE_TIME_KEY
+    var lastUpdatedTimeKey = WSRefresh_Header_Last_Update_Time_Key
     
     
     /** 上一次下拉刷新成功的时间 */
@@ -51,7 +54,7 @@ class WSRefrshHeader: WSRefreshComponent {
         super.prepare()
         
 //        lastUpdatedTimeKey = WSREFRESH_HEADER_LAST_UPDATE_TIME_KEY
-        self.viewHeight = WSREFRESH_HEADER_HEIGHT
+        self.viewHeight = WSRefresh_Header_Height
         
     }
 
@@ -180,7 +183,7 @@ class WSRefreshStateHeader: WSRefrshHeader {
             stateTitles[3] = title
         case .WillRefresh:
             stateTitles[4] = title
-        case .Ended:
+        case .NoMoreData:
             stateTitles[5] = title
             
         }
@@ -265,7 +268,7 @@ class WSRefreshStateHeader: WSRefrshHeader {
         case .WillRefresh:
             stateLabel?.text = stateTitles[4]
 
-        case .Ended:
+        case .NoMoreData:
             stateLabel?.text = stateTitles[5]
         }
         
@@ -395,7 +398,7 @@ class WSRefreshNormalHeader: WSRefreshStateHeader {
             loadingView?.startAnimating()
             arrowView?.hidden = true
             
-        case .Ended, .WillRefresh:
+        case .NoMoreData, .WillRefresh:
             println("AnimationEnding")
         }
         super.setState(state)
