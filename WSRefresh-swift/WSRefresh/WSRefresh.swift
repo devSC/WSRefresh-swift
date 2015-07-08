@@ -51,13 +51,10 @@ extension UIScrollView: UIScrollViewDelegate {
 
     }
     
+    //MARK: Refresh Method
     func endHeaderRefreshing() {
         self.refreshHeader?.endingRefreshing()
     }
-    
-    
-    
-    
 }
 
 
@@ -74,7 +71,7 @@ enum WSRefreshViewState: Int {
     case Pulling
     case Refreshing
     case WillRefresh
-    case Ended
+    case NoMoreData
 }
 
 
