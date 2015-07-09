@@ -14,6 +14,7 @@ let REFRESH_HEADER_TAG = 10
 let REFRESH_FOOTER_TAG = 11
 let WS_SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
 
+
 extension UIScrollView: UIScrollViewDelegate {
 
     var refreshHeader: WSRefreshNormalHeader? {
@@ -54,6 +55,10 @@ extension UIScrollView: UIScrollViewDelegate {
     //MARK: Refresh Method
     func endHeaderRefreshing() {
         self.refreshHeader?.endingRefreshing()
+    }
+    
+    func endFooterRefreshing() {
+        self.refreshFooter?.endingRefreshing()
     }
 }
 
@@ -251,7 +256,6 @@ class WSRefreshComponent: UIView {
         self.setState(.Default)
     }
     
-    //是否正在刷新
     func isRefreshing() -> Bool {
         return false
     }
@@ -261,15 +265,3 @@ class WSRefreshComponent: UIView {
     }
     
 }
-
-//extension UILabel {
-//    func label() ->UILabel {
-//        var label = UILabel()
-//        label.font = UIFont.boldSystemFontOfSize(14);
-//        stateLabel!.backgroundColor = UIColor.clearColor()
-//        label.textColor = rgbColor(90, 90, 90);
-//        label.autoresizingMask = .FlexibleWidth
-//        label.textAlignment = .Center;
-//        return label;
-//    }
-//}

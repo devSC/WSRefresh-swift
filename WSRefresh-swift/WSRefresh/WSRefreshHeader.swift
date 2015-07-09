@@ -9,23 +9,6 @@
 import Foundation
 import UIKit
 
-let WSRefresh_Header_Last_Update_Time_Key = "WSREFRHER_HEADER_LAST_UPDATE_TIME_KEY"
-let WSRefresh_Header_Height: CGFloat = 64.0
-
-let WSRefresh_Fast_Animation_Duration = 0.25
-let WSRefresh_Slow_Animation_Duration = 0.4
-
-let WSRefresh_Footer_Height: CGFloat = 44.0
-//
-//NSString *const MJRefreshAutoFooterIdleText = @"点击或上拉加载更多";
-//NSString *const MJRefreshAutoFooterRefreshingText = @"正在加载更多的数据...";
-//NSString *const MJRefreshAutoFooterNoMoreDataText = @"已经全部加载完毕";
-
-let WSRefresh_Header_DefaultText = "下拉可以刷新"
-let WSRefresh_Header_PullingText = "松开立即刷新"
-let WSRefresh_Header_RefreshingText = "正在刷新数据.."
-
-
 func rgbColor(r: CGFloat, g: CGFloat, b: CGFloat) ->UIColor {
     return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1)
 }
@@ -349,9 +332,6 @@ class WSRefreshNormalHeader: WSRefreshStateHeader {
         
         //圈圈
         loadingView!.frame = arrowView!.frame
-        
-        
-//        self.setState(.Default)
 
     }
     
@@ -405,11 +385,3 @@ class WSRefreshNormalHeader: WSRefreshStateHeader {
     }
 }
 
-
-
-
-//extension UIColor {
-//    func rgbColor(r: CGFloat, g: CGFloat, b: CGFloat) ->UIColor {
-//        return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1)
-//    }
-//}

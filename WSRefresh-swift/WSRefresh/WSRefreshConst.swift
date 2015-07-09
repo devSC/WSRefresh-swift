@@ -7,20 +7,21 @@
 //
 
 import Foundation
-//NSString *const MJRefreshAutoFooterIdleText = @"点击或上拉加载更多";
-//NSString *const MJRefreshAutoFooterRefreshingText = @"正在加载更多的数据...";
-//NSString *const MJRefreshAutoFooterNoMoreDataText = @"已经全部加载完毕";
+import UIKit
+
+
+let WSRefresh_Footer_Height: CGFloat = 44.0
+let WSRefresh_Header_Height: CGFloat = 64.0
+
+let WSRefresh_Fast_Animation_Duration = 0.25
+let WSRefresh_Slow_Animation_Duration = 0.4
+
+let WSRefresh_Header_DefaultText = "下拉可以刷新"
+let WSRefresh_Header_PullingText = "松开立即刷新"
+let WSRefresh_Header_RefreshingText = "正在刷新数据.."
+
 let WSRefresh_AutoFooter_DefaultText = "点击或上拉加载更多"
 let WSRefresh_AutoFooter_RefreshingText = "正在加载更多的数据..."
 let WSRefresh_AutoFooter_NoMoreDataText = "已经全部加载完毕"
 
-//#define MJColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
-//
-//// 文字颜色
-//#define MJRefreshLabelTextColor MJColor(90, 90, 90)
-//
-//// 字体大小
-//#define MJRefreshLabelFont [UIFont boldSystemFontOfSize:14]
-//
-//// 图片路径
-//#define MJRefreshSrcName(file) [@"MJRefresh.bundle" stringByAppendingPathComponent:file]
+let WSRefresh_Header_Last_Update_Time_Key = "WSREFRHER_HEADER_LAST_UPDATE_TIME_KEY"

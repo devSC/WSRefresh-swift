@@ -55,11 +55,15 @@ class WSRefreshAutoFooter: WSRefreshFooter {
             //Reset frame
             self.scrollViewContentSizeDidChange([:])
             
-        } else {
+        } else {//Remove
             scrollView.ws_insetBottom -= self.ws_h
         }
     }
-    
+
+    //MARK: SuperClass
+    override func prepare() {
+        super.prepare()
+    }
     
     override func scrollViewContentSizeDidChange(change: NSDictionary) {
         super.scrollViewContentSizeDidChange(change)
@@ -67,11 +71,6 @@ class WSRefreshAutoFooter: WSRefreshFooter {
         self.ws_y = scrollView.ws_contentHeight
     }
 
-    
-    override func prepare() {
-        super.prepare()
-    }
-    
     
     override func scrollViewContentOffsetDidChange(change: NSDictionary) {
         super.scrollViewContentOffsetDidChange(change)
@@ -82,12 +81,12 @@ class WSRefreshAutoFooter: WSRefreshFooter {
         if scrollView.ws_insetTop + scrollView.ws_contentHeight > scrollView.ws_h {
             
             if scrollView.ws_offsetY > scrollView.ws_contentHeight - scrollView.ws_h + self.ws_h * self.appearencePercentTriggerAutoRefresh + scrollView.ws_insetBottom - self.ws_h {
-                //防止手松开时连续调用
                 
-                var old = change["old"] as? CGPoint
-                var new = change["new"] as? CGPoint
-                
-                if new?.y > old?.y {
+                var old = change["old"] as? NSValue
+                var new = change["new"] as? NSValue
+                var oldP = old?.CGPointValue()
+                var newP = new?.CGPointValue()
+                if newP?.y > oldP?.y {
                     self.beginRefreshing()
                 }
                 
@@ -221,14 +220,7 @@ class WSRefreshAutoStateFooter: WSRefreshAutoFooter {
 }
 
 class WSRefreshAutoNormalFooter: WSRefreshAutoStateFooter {
-//    var indicatorViewStyle: UIActivityIndicatorViewStyle {
-//        set {
-//            loadingView?.activityIndicatorViewStyle = newValue
-//        }
-//        get {
-//            return loadingView!.activityIndicatorViewStyle
-//        }
-//    }
+
     var indicatorViewStyle: UIActivityIndicatorViewStyle?
     private var loadingView: UIActivityIndicatorView?
     

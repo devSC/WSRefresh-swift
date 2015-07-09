@@ -21,21 +21,30 @@ class ViewController: UITableViewController {
         
         self.tableView.reloadData()
         
-//        self.tableView.addWSRefreshViewHeader { () -> (Void) in
-//            
-//            self.addRandomDataToArray()
-//            
-//            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))) // 1
-//
-//            
-//            dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
-//                self.tableView.endHeaderRefreshing()
-//                self.tableView.reloadData()
-//            })
-//        }
+        self.tableView.addWSRefreshViewHeader { () -> (Void) in
+            
+            self.addRandomDataToArray()
+            
+            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))) // 1
+
+            
+            dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
+                self.tableView.endHeaderRefreshing()
+                self.tableView.reloadData()
+            })
+        }
         
         self.tableView.addWSRefreshViewFooter { () -> () in
-          
+            self.addRandomDataToArray()
+            
+            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))) // 1
+            
+            
+            dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
+                self.tableView.endFooterRefreshing()
+                self.tableView.reloadData()
+            })
+
             
         };
     }
@@ -99,6 +108,19 @@ class CollectionVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
             })
         })
         
+        self.collectionView?.addWSRefreshViewFooter({ () -> () in
+            
+            self.addRandomDataToArray()
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
+                
+                self.collectionView?.reloadData()
+                self.collectionView?.endFooterRefreshing()
+            })
+        })
+
+        
+        
         
 
     }
@@ -130,5 +152,23 @@ class CollectionVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
         return CGSize(width: width, height: width)
     }
 
+}
+
+class WebViewController: UIViewController {
+    @IBOutlet weak var webView: UIWebView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        var request = NSURLRequest(URL: NSURL(string: "http://weibo.com/wilsondev")!)
+        webView.loadRequest(request)
+        webView.request
+     
+        webView.scrollView.addWSRefreshViewHeader { () -> () in
+            self.webView.reload()
+            
+            self.webView.scrollView.endHeaderRefreshing()
+        }
+    }
+    
 }
 
